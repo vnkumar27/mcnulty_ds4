@@ -2,9 +2,6 @@
 <html>
 <meta charset="utf-8">
 
-<!-- Example based on http://bl.ocks.org/mbostock/3887118 -->
-<!-- Tooltip example from http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html -->
-
 <style>
 body {
   font: 11px sans-serif;
@@ -43,16 +40,7 @@ body {
       onclick="updatePoints()"/>
 </div>
 
-<!-- <h3>A demonstration of how to access a File Upload Button</h3>
 
-<input type="file" id="myFile">
-
-<script>
-function myFunction() {
-    var filePath = document.getElementById("myFile").val();
-    console.log(filePath);
-}
-</script>-->
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
 
@@ -153,23 +141,6 @@ d3.csv("./data/parkinglot.csv", function(error, data) {
       .attr("opacity", 0.1)
       .attr("cx", xMap)
       .attr("cy", 0)
-      // .style("fill","red")
-      // .style("fill", function(d) { return color(cValue(d));})
-    // .transition()
-    //   .delay(900)
-    //   .duration(900)
-    //   .attr("r", 15)
-    //   .attr("cx", xMap)
-    //   .attr("cy", yMap)
-    //   .style("fill", "gray")
-    //   .style("opacity", 0.3)
-    //
-    // .transition()
-      // .delay(1000)
-      // .duration(1800)
-      // .attr("r", 14)
-      // .style("fill", "red")
-      // .style("opacity", 0.60)
 
     .on("mouseover", function(d) {
           tooltip.transition()
@@ -214,35 +185,5 @@ var svg = d3.select("body").transition();
   });
 }
 
-// ** Update data section (Called from the onclick)
-// function updateData() {
-//
-//     // Get the data again
-//     d3.csv("data-alt.csv", function(error, data) {
-//        	data.forEach(function(d) {
-// 	    	d.date = parseDate(d.date);
-// 	    	d.close = +d.close;
-// 	    });
-//
-//     	// Scale the range of the data again
-//     	x.domain(d3.extent(data, function(d) { return d.date; }));
-// 	    y.domain([0, d3.max(data, function(d) { return d.close; })]);
-//
-//     // Select the section we want to apply our changes to
-//     var svg = d3.select("body").transition();
-//
-//     // Make the changes
-//         svg.select(".line")   // change the line
-//             .duration(750)
-//             .attr("d", valueline(data));
-//         svg.select(".x.axis") // change the x axis
-//             .duration(750)
-//             .call(xAxis);
-//         svg.select(".y.axis") // change the y axis
-//             .duration(750)
-//             .call(yAxis);
-//
-//     });
-// }
 
 </script>
