@@ -96,7 +96,7 @@ var tooltip = d3.select("body").append("div")
     var imgs = svg.selectAll("image").data([0]);
         imgs.enter()
         .append("svg:image")
-        .attr("xlink:href", "file:////Users/cbuie/d3/ParkingLot/img/generic.jpg")
+        .attr("xlink:href", "/Users/veenakumar/ds/mcnulty_ds4/ParkingLot/img/2012-10-31_10_08_09.jpg")
         .attr("x", "0")
         .attr("y", "0")
         .attr("width", "1050")
@@ -105,7 +105,7 @@ var tooltip = d3.select("body").append("div")
 
 
 // load data
-d3.csv("./data/generic_result_cb.csv", function(error, data) {
+d3.csv("/Users/veenakumar/ds/mcnulty_ds4/ParkingLot/data/2012_10_31_10_08_data.csv", function(error, data) {
 
   // change string (from CSV) into number format
   data.forEach(function(d) {
@@ -157,7 +157,7 @@ function updatePoints() {
       .attr("width", "1050")
       .attr("height", "500");
 
-  d3.csv("./data/generic_result_cb.csv", function(error, data) {
+  d3.csv("/Users/veenakumar/ds/mcnulty_ds4/ParkingLot/data/2012_10_31_10_08_data.csv", function(error, data) {
 
 
     data.forEach(function(d) {
