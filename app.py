@@ -1,12 +1,10 @@
-from flask import Flask, url_for, render_template 
+from flask import Flask, url_for, render_template
 
 from flask_appconfig import AppConfig
 from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
 Bootstrap(app)
-
-app.debug = True
 
 @app.route("/")
 def index():
@@ -21,7 +19,7 @@ def present():
     return render_template('present.html')
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
 
 
 # def render_sidebar_template(tmpl_name, **kwargs):

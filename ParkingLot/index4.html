@@ -45,7 +45,7 @@ body {
 
 <form >
   <select id = "sift">
-  <option value=" '/Users/cbuie/Downloads/PKLot/PKLot/PUCPR/Cloudy/2012-09-12/cropped/2012-09-12_06_41_49.jpg'">data</option>
+  <!-- <option value=" '/Users/cbuie/Downloads/PKLot/PKLot/PUCPR/Cloudy/2012-09-12/cropped/2012-09-12_06_41_49.jpg'">data</option> -->
   <option value="two">2012-09-12_06_57_29.jpg</option>
   <option value="three">2012-09-12_07_02_42.jpg</option>
   <option value="four">2012-09-12_07_23_35.jpg</option>
@@ -109,7 +109,7 @@ var tooltip = d3.select("body").append("div")
     var imgs = svg.selectAll("image").data([0]);
         imgs.enter()
         .append("svg:image")
-        .attr("xlink:href", "/Users/veenakumar/ds/mcnulty_ds4/ParkingLot/img/2012-10-31_10_08_09.jpg")
+        .attr("xlink:href", "img/2012-10-31_10_08_09.jpg")
         .attr("x", "0")
         .attr("y", "0")
         .attr("width", "1050")
@@ -118,7 +118,7 @@ var tooltip = d3.select("body").append("div")
 
 
 // load data
-d3.csv("/Users/veenakumar/ds/mcnulty_ds4/ParkingLot/data/2012_10_31_10_08_data.csv", function(error, data) {
+d3.csv("./data/2012_10_31_10_08_data.csv", function(error, data) {
 
   // change string (from CSV) into number format
   data.forEach(function(d) {
@@ -144,8 +144,8 @@ d3.csv("/Users/veenakumar/ds/mcnulty_ds4/ParkingLot/data/2012_10_31_10_08_data.c
       .attr("cy", 0)
       .on("mouseover", function(d) {
           tooltip.transition()
-               .duration(200)
-               .style("opacity", .9);
+               .duration(150)
+               .style("opacity", .7);
           tooltip.html(d.id + "<br/> (" + xValue(d)
 	        + ", " + yValue(d) + ")")
                .style("left", (d3.event.pageX + 5) + "px")
@@ -164,13 +164,13 @@ function updatePoints() {
   var imgs = svg.selectAll("image").data([0]);
       imgs.enter()
       .append("svg:image")
-      .attr("xlink:href", "file:////Users/cbuie/d3/ParkingLot/img/generic.jpg")
+      .attr("xlink:href", "img/2012-10-31_10_08_09.jpg")
       .attr("x", "0")
       .attr("y", "0")
       .attr("width", "1050")
       .attr("height", "500");
 
-  d3.csv("/Users/veenakumar/ds/mcnulty_ds4/ParkingLot/data/2012_10_31_10_08_data.csv", function(error, data) {
+  d3.csv("./data/2012_10_31_10_08_data.csv", function(error, data) {
 
 
     data.forEach(function(d) {
