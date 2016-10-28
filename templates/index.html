@@ -8,6 +8,10 @@
       font: 11px sans-serif;
     }
 
+    form {
+
+    }
+
     .axis path,
     .axis line {
       fill: none;
@@ -46,20 +50,30 @@
 
     text.axis-workweek {
       fill: #000;
+      font-size: 12pt;
     }
 
-    text.axis-worktime {
-      fill: #000;
+
+    .dataset-button {
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      color: #fff;
+      position: relative;;
+      display: inline-block;
+      background-color: #273993;
+
     }
+
 
   </style>
 {% endblock %}
 {% block content %}
-<!-- <div class= 'col-md-8 col-md-offset-2'> -->
-<!-- <div id="DIV_1"> -->
-    <h1>
+
+    <h2>
       Hello, shoppers!
-    </h1>
+    </h2>
     <br/>
     <p id="P_4">
 
@@ -124,7 +138,7 @@
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
           .append("g")
-          .attr("transform", "translate(" + 80 + "," + margin.top + ")");
+          .attr("transform", "translate(" + 200 + "," + margin.top + ")");
 
       var dayLabels = svg.selectAll(".dayLabel")
           .data(days)
@@ -134,7 +148,7 @@
             .attr("y", function (d, i) { return i * gridSize; })
             .style("text-anchor", "end")
             .attr("transform", "translate(-6," + gridSize / 1.5 + ")")
-            .attr("class", function (d, i) { return ((i >= 0 && i <= 4) ? "dayLabel mono axis axis-workweek" : "dayLabel mono axis"); });
+            .attr("class", function (d, i) { return ((i >= 0 && i <= 4) ? "dayLabel mono axis axis-workweek" : "dayLabel mono axis axis-workweek"); });
 
       var timeLabels = svg.selectAll(".timeLabel")
           .data(times)
@@ -144,7 +158,7 @@
             .attr("y", 0)
             .style("text-anchor", "middle")
             .attr("transform", "translate(" + gridSize / 2 + ", -6)")
-            .attr("class", function(d, i) { return ((i >= 7 && i <= 16) ? "timeLabel mono axis axis-worktime" : "timeLabel mono axis"); });
+            .attr("class", function(d, i) { return ((i >= 7 && i <= 16) ? "timeLabel mono axis axis-workweek" : "timeLabel mono axis axis-workweek"); });
 
       var heatmapChart = function(csvFile) {
         d3.csv(csvFile,

@@ -1,6 +1,13 @@
 
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
+#left_container{
+    float: left;
+    width: 200px;
+    margin-left: -200px;
+    background-color: #CCCCCC;
+}
+
 body {
   	background-color: #ffffff;
   	font-family: 'Montserrat', sans-serif;
@@ -24,12 +31,14 @@ ol {
   margin-bottom: 10px;
 }
 h1 {
-	font-size: 35px;
+	font-size: 50px;
 	margin-top: 30px;
 	margin-bottom: 30px;
 }
 
-
+h2 {
+  font-size: 30px;
+}
 
 /* Paragraph & Typographic */
 p {
@@ -132,7 +141,7 @@ a:after {
 
 .header {
   text-transform: uppercase;
-  color: white
+  color: white;
 }
 .navbar {
 	text-transform: uppercase;
@@ -141,8 +150,8 @@ a:after {
 }
 
 .navbar-inverse {
-	padding-bottom: 30px;
-	padding-top: 30px;
+	padding-bottom: 0px;
+	padding-top: 50px;
 }
 
 .navbar-inverse {
@@ -175,7 +184,8 @@ a:after {
     padding-bottom: 15px;
   }
   .navbar-nav.navbar-right:last-child {
-    margin-right: -15px;
+    margin-right: 50px;
+    font-size: 30px;
   }
 }
 @media (min-width: 768px) {
